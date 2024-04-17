@@ -8,6 +8,7 @@ def index(request):
     return render(request, 'index.html')
 
 
+
 def signup(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -37,3 +38,8 @@ def signup(request):
             return redirect('signup')
     else:
         return render(request, 'signup.html')
+
+
+
+def signin(request):
+    return render(request, 'signin.html')
