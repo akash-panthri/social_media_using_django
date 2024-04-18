@@ -10,6 +10,10 @@ def index(request):
 
 
 
+@login_required(login_url='signin')
+def settings(request):
+    return render(request, 'setting.html')
+
 def signup(request):
     if request.method == 'POST':
         username = request.POST['username']
