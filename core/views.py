@@ -90,3 +90,6 @@ def signin(request):
 def signout(request):
     auth.logout(request)
     return redirect('signin')
+
+def upload(request):
+    return render(request, 'index.html')
