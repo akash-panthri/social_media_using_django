@@ -72,19 +72,22 @@
                                             <path d="M9 13h2v5a1 1 0 11-2 0v-5z" />
                                         </svg>
                                     </div>
-
+<form>
                                     <p class="my-3 leading-6"> Upload pics<br> please upload her ..
                                     </p>
-                                    <div uk-form-custom>
-                                        <input type="file">
-                                        <a href="#" class="button soft-warning small"> Choose file</a>
+                                    <div>
+                                        <input type="file" name="image_upload">
+                                        <textarea class="button soft-warning small" name="caption" placeholder="caption..." ></textarea>
+                                        <br>
+                                        <button class="button bg-blue-700" type="submit" >Upload</button>
+                                        {% comment %} <a href="#" class="button soft-warning small"> Choose file</a> {% endcomment %}
                                     </div>
     
-                                    <a href="#" class="uk-text-muted mt-3 uk-link"
+                                    {% comment %} <a href="#" class="uk-text-muted mt-3 uk-link"
                                         uk-toggle="target: .choose-upload ;  animation: uk-animation-slide-right-small, uk-animation-slide-left-medium; queued: true">
-                                        Or Import Video </a>
+                                        Or Import Video </a> {% endcomment %}
                                 </div>
-    
+                            </form>
                                 <div class="uk-flex uk-flex-column choose-upload" hidden>
                                     <div class="mx-auto flex flex-col h-24 items-center justify-center relative w-full rounded-lg">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-12">
