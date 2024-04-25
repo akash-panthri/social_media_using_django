@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import Profile , Post,LikePost
+from .models import Profile , Post,LikePost, FollowersCount
 
 # Create your views here.
 def index(request):
