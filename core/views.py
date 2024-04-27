@@ -9,6 +9,11 @@ def index(request):
     user_object = User.objects.get(username=request.user.username)
     user_profile = Profile.objects.get(user=user_object)
     posts = Post.objects.all()
+
+
+    user_following_list = []
+
+    user_following = FollowersCount.objects.filter(follower=request.user.username)
     return render(request, 'index.html' , {'user_profile': user_profile, 'posts': posts})
 
 
