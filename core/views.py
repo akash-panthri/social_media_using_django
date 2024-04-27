@@ -3,6 +3,7 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Profile , Post,LikePost, FollowersCount
+from itertools import chain
 
 # Create your views here.
 def index(request):
@@ -21,9 +22,8 @@ def index(request):
         feed_lists = Post.objects.filter(user=usernames)
         feed.append(feed_lists)
 
-
-    posts = Post.objects.all()
-    return render(request, 'index.html' , {'user_profile': user_profile, 'posts': posts})
+    feed_list = list(chain(*feed))
+    return render(request, 'index.html' , {'user_profile': user_profile, 'posts': feed_list})
 
 
 
