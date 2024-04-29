@@ -15,13 +15,15 @@
     <link rel="stylesheet" href="{% static 'assets/css/uikit.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/tailwind.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
 
             <header>
                 <div class="header_inner">
-                    <form>
+                    <form  action="/search" method="POST">
+                        {% csrf_token %}
                     <div class="left-side">
                         <!-- Logo -->
                         <div id="logo" class=" uk-hidden@s">
@@ -35,8 +37,8 @@
                         </div>-->
 
                         {% comment %} <div class="header_search"> {% endcomment %}
-                            <input name='username' type="text" placeholder="Search for username..">
-                            <button type="submit"></button>
+                            <input name='username' type="text" placeholder="Search for username..">&nbsp; &nbsp;
+                            <button type="submit"><i class="fa fa-search fa-1x"></i></button>
                             {% comment %} <div class="icon-search">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor">
