@@ -186,3 +186,9 @@ def follow(request):
             return redirect('/profile/'+user)
     else:
         return redirect('/')
+    
+
+    
+@login_required(login_url='signin')
+def search(request):
+    return render(request, 'search.html')
