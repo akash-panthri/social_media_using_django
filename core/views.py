@@ -23,6 +23,15 @@ def index(request):
         feed.append(feed_lists)
 
     feed_list = list(chain(*feed))
+
+
+    #User Suggestion
+
+    user_following_all = []
+
+    for user in user_following:
+        user_list = User.objects.get(username=user.user)
+        user_following_all.append(user_list)
     return render(request, 'index.html' , {'user_profile': user_profile, 'posts': feed_list})
 
 
